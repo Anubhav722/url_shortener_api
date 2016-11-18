@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Shortify</title>
+    </head>
+    <body>
+        
+        {% if user.is_authenticated %}
+        <h1>Shortify says... hello {{ user.username }}!</h1>
+        <a href="/tiny_url/shorten/">Shorten here</a></br>
+
+        
+        
+        <a href="/tiny_url/logout/">Logout</a><br />
+        {% else %}
+        <h1>Shortify says... hello world!</h1>
+        <a href='/tiny_url/register/'>Register Here</a></br>
+        <a href='/tiny_url/login/'>Login here</a>
+        {% endif %}
+        
+        
+    </body>
+</html>

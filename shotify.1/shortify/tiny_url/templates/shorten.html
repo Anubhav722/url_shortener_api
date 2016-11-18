@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Shorten</title>
+    </head>
+    <body>
+        {% if is_shortened %}
+        <a href='/tiny_url/'>Return to homepage</a>
+        <br />
+        Full URL: {{ url_obj.full_url }}
+        <br />
+        Short URL: {{ url_obj.short_code }}<br/>
+        {{ x }}
+        {% else %}
+        <h3>Enter the url to shorten!</h3>
+        <form id="url_form" method="post" action="/tiny_url/shorten/"> <!-- enctype="multipart/form-data"> -->
+        {% csrf_token %}
+        {{ form.as_p }}
+            <input type="submit" name="submit" value="Shorten" />
+        </form>
+        {% endif %}
+    </body>
+</html>

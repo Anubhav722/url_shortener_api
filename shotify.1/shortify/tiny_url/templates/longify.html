@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>LONGIFY</title>
+    </head>
+    
+    <body>
+    {% if is_long %}
+        <a href='/tiny_url/'>Return to homepage</a>
+        </br>
+        Full URL: 
+        </br>
+    {% else %}
+        <h3>Enter the short code</h3>
+        <form id="long_form" method='post' action='/tiny_url/long/'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type='submit' name='submit' value='Long it'/>
+            
+        </form>
+        
+    {% endif %}
+    </body>
+</html>
